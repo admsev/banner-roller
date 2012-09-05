@@ -20,6 +20,8 @@
                   %span= current_user.email
                   %b.caret
                 %ul.dropdown-menu{:role=>'menu', "aria-dlabelledby"=>"drop1"}
+                  %li= link_to 'Your account', :edit_user_registration
+                  %li.divider
                   %li= link_to 'Your sites', :sites
                   %li.divider
                   %li= link_to 'Quit', :destroy_user_session, :method=>:delete
