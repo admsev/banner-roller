@@ -11,7 +11,47 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120905095428) do
+ActiveRecord::Schema.define(:version => 20120905103115) do
+
+  create_table "banners", :force => true do |t|
+    t.integer  "site_id"
+    t.string   "image"
+    t.string   "url"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "clicks_count"
+    t.integer  "shows_count"
+  end
+
+  add_index "banners", ["site_id"], :name => "index_banners_on_site_id"
+
+  create_table "clicks", :force => true do |t|
+    t.integer  "banner_id"
+    t.text     "data"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "clicks", ["banner_id"], :name => "index_clicks_on_banner_id"
+
+  create_table "shows", :force => true do |t|
+    t.integer  "banner_id"
+    t.text     "data"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "shows", ["banner_id"], :name => "index_shows_on_banner_id"
+
+  create_table "sites", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "sites", ["user_id"], :name => "index_sites_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
