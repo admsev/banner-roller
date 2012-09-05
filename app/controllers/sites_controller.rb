@@ -9,7 +9,9 @@ class SitesController < ApplicationController
   def code
     @site = Site.find(params[:id])
     if @banner = @site.banners.where("show_stock > 0 AND click_stock > 0").sample
-      @banner.shows.create!
+      @banner.shows.create(:data => {
+        :remote_ip => request.remote_ip
+      })
       respond_with @banner
     end
   end

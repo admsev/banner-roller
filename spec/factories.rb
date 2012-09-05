@@ -28,18 +28,11 @@ FactoryGirl.define do
     site
     show_stock 100
     click_stock 100
-    image File.open("spec/468x60.gif")
+    image File.open("spec/468x60-1.gif")
   end
   
   factory :user do |f|
     email
     password "secret"
-    
-    #f.after_create do |user|
-    #  user.sites.create FactoryGirl.build(:site)
-    #end
-#    u.after_create do |user|
-#      user.sites.create FactoryGirl.build(:site)
-#    end
   end
 end

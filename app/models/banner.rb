@@ -6,6 +6,7 @@ class Banner < ActiveRecord::Base
   
   validates :site_id, :presence => true
   validates :image, :presence => true
+  validates :name, :presence => true
 
   validates :show_stock, :numericality => {:only_integer => true, :greater_than_or_equal_to => 0}
   validates :click_stock, :numericality => {:only_integer => true, :greater_than_or_equal_to => 0}

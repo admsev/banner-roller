@@ -1,7 +1,15 @@
-== Welcome to Banner App
+== Welcome to Banner Network
 
 Storing All the clicks and shows in database is prodigally.
 In real there should be Redis for last day and Daily, Weekly, Monthly stats in database.
+
+== Quick Start
+
+1. bundle && rake db:migrate && rails s
+
+3. User email: "example@example.com", password: "secret"
+
+2. We use guard for rspec.
 
 == Notice
 
@@ -22,3 +30,4 @@ In real there should be Redis for last day and Daily, Weekly, Monthly stats in d
 3. prevent_robots
 
 4. CanCan
+
