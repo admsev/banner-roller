@@ -1,7 +1,55 @@
-= link_to 'Sites', :sites
-&rarr;
-= link_to @site.name, @site
-&rarr;
-Banners
-= link_to "Create Banner", [:new, @site, :banner]
-= render @banners
+%ul.breadcrumb
+  %li
+    = link_to 'Your Sites', :sites
+    %span.divider /
+  %li
+    = link_to @site.name, @site
+    %span.divider /
+  %li Banners
+  
+%h1
+  Banners for #{link_to @site.name, @site} (#{@site.url})
+  %small
+    |
+    = link_to 'Add Banner', [:new, @site, :banner]
+
+- if @banners
+  %p
+    Put this code to your site's HTML:
+    %code
+      :escaped
+        #{site_banner_code(@site)}
+  %table.table.table-striped.table-bordered.banners
+    %thead
+      %tr
+        %th.span9 Banner
+        %th.span1
+          %div Views
+          %div (done/stock)
+        %th.span1
+          %div Clicks
+          %div (done/stock)
+        %th.actions.span2
+          Actions
+    - @banners.each do |banner|
+      %tr[banner]
+        %td
+          %h3= banner.name
+          %p= image_tag(banner.image.url)
+          %p= banner.image.url
+        %td
+          = "#{banner.shows_count}/#{banner.show_stock}"
+          = link_to [:edit, banner.site, banner], :title => 'Add Views' do
+            %span.icon-plus
+        %td
+          = "#{banner.clicks_count}/#{banner.click_stock}"
+          = link_to [:edit, banner.site, banner], :title => 'Add Clicks' do
+            %span.icon-plus
+        %td.actions
+          = link_to [banner.site, banner] do
+            %span.icon-eye-open
+          = link_to [:edit, banner.site, banner] do
+            %span.icon-edit
+          = link_to [banner.site, banner], :method => :delete, :confirm => 'REALLY DELETE BANNER?', :remote => true do
+            %span.icon-remove
+        

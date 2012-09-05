@@ -11,19 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120905131533) do
+ActiveRecord::Schema.define(:version => 20120905162146) do
 
   create_table "banners", :force => true do |t|
     t.integer  "site_id"
     t.string   "image"
     t.string   "url"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.integer  "clicks_count"
-    t.integer  "shows_count"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+    t.integer  "clicks_count", :default => 0
+    t.integer  "shows_count",  :default => 0
     t.string   "name"
-    t.integer  "show_stock"
-    t.integer  "click_stock"
+    t.integer  "show_stock",   :default => 0
+    t.integer  "click_stock",  :default => 0
   end
 
   add_index "banners", ["site_id"], :name => "index_banners_on_site_id"

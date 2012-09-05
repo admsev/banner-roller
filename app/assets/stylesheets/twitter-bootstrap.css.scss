@@ -1,0 +1,21 @@
+@import "bootstrap";
+
+body {
+  margin-top: 50px;
+}
+
+footer {
+  margin-bottom: 50px;
+}
+
+.table td.actions, .table th.actions {
+  text-align: center;
+}
+
+.table.sites td.name a {
+  display: block;
+}
+
+table.banners td {
+  vertical-align: top;
+}

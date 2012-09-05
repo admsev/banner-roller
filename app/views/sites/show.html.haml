@@ -1,4 +1,10 @@
 %h1= @site.name
 %p= @site.url
 
-= "<script src='" + code_site_url(@site, :format=>:js) + "'></script>"
+%code
+  :escaped
+    #{site_banner_code(@site)}
+
+%p= link_to "#{@site.banners.count} Banners total, #{@site.banners.showable.count} active", [@site, :banners]
+
+%p= link_to 'Add Banner', [:new, @site, :banner]

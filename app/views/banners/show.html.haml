@@ -1,8 +1,15 @@
-= link_to 'Sites', :sites
-&rarr;
-= link_to @banner.site.name, @banner.site
-&rarr;
-%h1= @banner.name
+%ul.breadcrumb
+  %li
+    = link_to 'Your Sites', :sites
+    %span.divider /
+  %li
+    = link_to @site.name, @site
+    %span.divider /
+  %li
+    = link_to "Banners", [@site, :banners]
+    %span.divider /
+  %li= @banner.name
+  
 = @banner.url
 - if @banner.image
   = image_tag @banner.image.url

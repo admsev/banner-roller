@@ -1,0 +1,46 @@
+!!!
+%html
+  %head
+    = stylesheet_link_tag    'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/themes/redmond/jquery-ui.css'
+
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.brand(href='/') Banner Network
+          %ul.nav
+            - if user_signed_in?
+              %li= link_to 'Your Sites', :sites
+              %li= link_to 'Add Site', :sites
+          %ul.nav.pull-right
+            - if user_signed_in?
+              %li.dropdown
+                %a.dropdown-toggle{:href=>'#', :role=>'button', 'data-toggle'=>'dropdown', :id=>'drop1'}
+                  %span= current_user.email
+                  %b.caret
+                %ul.dropdown-menu{:role=>'menu', "aria-dlabelledby"=>"drop1"}
+                  %li= link_to 'Your sites', :sites
+                  %li.divider
+                  %li= link_to 'Quit', :destroy_user_session, :method=>:delete
+            - else
+              %li= link_to 'Sign in', :new_user_session
+              %li= link_to 'Sign up', :new_user_registration
+    .container
+      - flash.each do |key, value|
+        .row.alert{:class=>key}= value
+      .row
+        .span12= yield
+      %hr
+      %footer
+        .pull-left
+          &copy;
+          = link_to "Banner Network", :root
+        .pull-right
+          = link_to raw('Alexander Manzyuk'), 'mailto:admsev@gmail.com'
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js'
+    = javascript_include_tag "/admin/widget.js"
+    :javascript
+      #{yield(:javascripts)}
