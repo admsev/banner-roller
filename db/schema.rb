@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120905103115) do
+ActiveRecord::Schema.define(:version => 20120905124025) do
 
   create_table "banners", :force => true do |t|
     t.integer  "site_id"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20120905103115) do
     t.datetime "updated_at",   :null => false
     t.integer  "clicks_count"
     t.integer  "shows_count"
+    t.string   "name"
   end
 
   add_index "banners", ["site_id"], :name => "index_banners_on_site_id"

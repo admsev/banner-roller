@@ -1,0 +1,7 @@
+= link_to 'Sites', :sites
+&rarr;
+= link_to @site.name, @site
+&rarr;
+Banners
+= link_to "Create Banner", [:new, @site, :banner]
+= render @banners

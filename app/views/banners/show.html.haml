@@ -1,0 +1,8 @@
+= link_to 'Sites', :sites
+&rarr;
+= link_to @banner.site.name, @banner.site
+&rarr;
+%h1= @banner.name
+= @banner.url
+.actions
+  = link_to 'Edit', [:edit, @site, @banner]

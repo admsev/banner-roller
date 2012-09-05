@@ -11,6 +11,7 @@ gem 'devise'
 gem 'sass'
 gem 'haml-rails'
 gem 'cancan'
+gem 'inherited_resources'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -27,7 +28,7 @@ end
 gem 'jquery-rails'
 
 gem "rspec-rails", :group => [:test, :development]  
-group :test do  
+group :test, :development do  
   gem "factory_girl_rails"  
   gem "capybara"  
   gem "guard-rspec"  
