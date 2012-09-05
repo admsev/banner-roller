@@ -2,7 +2,10 @@ Banners::Application.routes.draw do
   devise_for :users
   
   resources :sites do
-    resources :banners
+    get 'code', :on => :member
+    resources :banners do
+      get 'click', :on => :member
+    end
   end
 
   # The priority is based upon order of creation:

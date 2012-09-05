@@ -4,5 +4,7 @@
 &rarr;
 %h1= @banner.name
 = @banner.url
+- if @banner.image
+  = image_tag @banner.image.url
 .actions
   = link_to 'Edit', [:edit, @site, @banner]

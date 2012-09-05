@@ -1,5 +1,18 @@
 = form_for [parent, resource] do |f|
-  = f.text_field :name
-  = f.text_field :url
-  = f.file_field :image
+  = debug f.object.errors
+  %p
+    = f.label :name
+    = f.text_field :name
+  %p
+    = f.label :url
+    = f.text_field :url
+  %p
+    = f.label :image
+    = f.file_field :image
+  %p
+    = f.label :show_stock
+    = f.text_field :show_stock
+  %p
+    = f.label :click_stock
+    = f.text_field :click_stock
   = f.submit
