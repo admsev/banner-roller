@@ -1,5 +1,5 @@
 class BannersController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => :click
   inherit_resources
   belongs_to :site
   custom_actions :resource => :click

@@ -1,12 +1,12 @@
-== Welcome to Rails
+== Welcome to Banner App
 
 Storing All the clicks and shows in database is prodigally.
-In real life there should be Redis for last day and Daily, Weekly, Monthly stats in database.
+In real there should be Redis for last day and Daily, Weekly, Monthly stats in database.
 
-== Getting Started
+== Notice
 
 1. It'd be nice use Mina gem for deployment
 
 2. Currently images are stored on local filesystem. Use "fog" gem for Amazon S3.
 
-
+3. Sorry there's not so much time for rspec. Please see examples in /spec. I know, tests first in real life.

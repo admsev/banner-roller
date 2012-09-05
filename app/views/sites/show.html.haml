@@ -1,2 +1,4 @@
 %h1= @site.name
 %p= @site.url
+
+= "<script src='" + code_site_url(@site, :format=>:js) + "'></script>"
