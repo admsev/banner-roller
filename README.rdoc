@@ -5,8 +5,20 @@ In real there should be Redis for last day and Daily, Weekly, Monthly stats in d
 
 == Notice
 
-1. It'd be nice use Mina gem for deployment
+1. It'd be nice use Mina gem for deployment.
 
 2. Currently images are stored on local filesystem. Use "fog" gem for Amazon S3.
 
 3. Sorry there's not so much time for rspec. Please see examples in /spec. I know, tests first in real life.
+
+4. No time for candy bootstrap forms, sorry :)
+
+== TODO
+
+1. Candy Bootstrap forms for sites, banners, devise
+
+2. Of course, more specs
+
+3. prevent_robots
+
+4. CanCan

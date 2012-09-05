@@ -39,6 +39,9 @@ group :test, :development do
   gem "guard-rspec"  
 end  
 
+gem 'launchy', :group => :test
+gem 'letter_opener', :group => :development
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

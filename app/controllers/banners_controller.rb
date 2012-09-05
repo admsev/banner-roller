@@ -5,9 +5,17 @@ class BannersController < ApplicationController
   custom_actions :resource => :click
   respond_to :html, :xml, :json, :js
   
+  before_filter :prevent_robots, :only => [:create] 
+  
   def click
-    resource.clicks.create
+    resource.clicks.create(:data => {
+      # some data from request
+    })
     redirect_to @banner.url
   end
   
+  protected
+    def prevent_robots
+      # prevention code goes here
+    end
 end
