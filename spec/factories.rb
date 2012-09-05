@@ -8,7 +8,30 @@ FactoryGirl.define do
     "email#{n}@example.com"
   end
   
-  factory :user do
+  sequence :name do |n|
+    "name#{n}"
+  end
+  
+  sequence :url do |n|
+    "http://www#{n}.example.com/"
+  end
+  
+  factory :site do |f|
+    name
+    url
+    user
+  end
+  
+  factory :banner do |f|
+    name
+    url
+    site
+    show_stock 100
+    click_stock 100
+    image File.open("spec/468x60-1.gif")
+  end
+  
+  factory :user do |f|
     email
     password "secret"
   end

@@ -10,9 +10,8 @@
         .container
           %a.brand(href='/') Banner Network
           %ul.nav
-            - if user_signed_in?
-              %li= link_to 'Your Sites', :sites
-              %li= link_to 'Add Site', [:new, :site]
+            %li= link_to 'Your Sites', :sites
+            %li= link_to 'Add Site', [:new, :site]
           %ul.nav.pull-right
             - if user_signed_in?
               %li.dropdown
@@ -20,6 +19,8 @@
                   %span= current_user.email
                   %b.caret
                 %ul.dropdown-menu{:role=>'menu', "aria-dlabelledby"=>"drop1"}
+                  %li= link_to 'Your account', :edit_user_registration
+                  %li.divider
                   %li= link_to 'Your sites', :sites
                   %li.divider
                   %li= link_to 'Quit', :destroy_user_session, :method=>:delete
@@ -37,10 +38,10 @@
           &copy;
           = link_to "Banner Network", :root
         .pull-right
-          = link_to raw('Alexander Manzyuk'), 'mailto:admsev@gmail.com'
+          &copy;
+          = link_to 'Alexander Manzyuk', 'mailto:admsev@gmail.com'
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js'
-    = javascript_include_tag "/admin/widget.js"
     :javascript
       #{yield(:javascripts)}

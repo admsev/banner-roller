@@ -39,12 +39,14 @@
           %p= link_to File.basename(banner.image.url), banner.image.url
         %td
           = "#{banner.shows_count}/#{banner.show_stock}"
-          = link_to [:edit, banner.site, banner], :title => 'Add Views' do
-            %span.icon-plus
+          %div
+            = link_to [:edit, banner.site, banner], :title => 'Add Views' do
+              %span.icon-edit
         %td
           = "#{banner.clicks_count}/#{banner.click_stock}"
-          = link_to [:edit, banner.site, banner], :title => 'Add Clicks' do
-            %span.icon-plus
+          %div
+            = link_to [:edit, banner.site, banner], :title => 'Add Clicks' do
+              %span.icon-edit
         %td.actions
           = link_to [banner.site, banner] do
             %span.icon-eye-open

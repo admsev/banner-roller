@@ -1,1 +1,11 @@
+%ul.breadcrumb
+  %li
+    = link_to 'Your Sites', :sites
+    %span.divider /
+  %li
+    = link_to @site.name, @site
+    %span.divider /
+  %li Edit
+
+%h1 Edit Site
 = render :partial => 'form', :object => @site

@@ -19,6 +19,6 @@
             %span.icon-eye-open
           = link_to [:edit, site] do
             %span.icon-edit
-          = link_to site, :method => :delete, :confirm => 'REALLY DELETE SITE?' do
+          = link_to site, :method => :delete, :confirm => 'REALLY DELETE SITE?', :remote => true do
             %span.icon-remove
           

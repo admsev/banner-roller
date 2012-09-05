@@ -17,6 +17,8 @@ gem 'carrierwave'
 gem 'sass-rails'
 gem 'bootstrap-sass'
 
+gem 'simple_form'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -36,6 +38,9 @@ group :test, :development do
   gem "capybara"  
   gem "guard-rspec"  
 end  
+
+gem 'launchy', :group => :test
+gem 'letter_opener', :group => :development
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

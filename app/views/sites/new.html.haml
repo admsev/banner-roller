@@ -1,2 +1,8 @@
-%h1 Create Site
+%ul.breadcrumb
+  %li
+    = link_to 'Your Sites', :sites
+    %span.divider /
+  %li Add
+
+%h1 Add Site
 = render :partial => 'form', :object => @site
