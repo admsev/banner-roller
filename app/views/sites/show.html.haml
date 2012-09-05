@@ -1,4 +1,14 @@
-%h1= @site.name
+%ul.breadcrumb
+  %li
+    = link_to 'Your Sites', :sites
+    %span.divider /
+  %li= @site.name
+
+%h1
+  = @site.name
+  %small
+    |
+    = link_to 'Edit', [:edit, @site]
 %p= @site.url
 
 %code

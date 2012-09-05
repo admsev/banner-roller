@@ -13,7 +13,7 @@
     |
     = link_to 'Add Banner', [:new, @site, :banner]
 
-- if @banners
+- if @banners.count > 0
   %p
     Put this code to your site's HTML:
     %code
@@ -34,9 +34,9 @@
     - @banners.each do |banner|
       %tr[banner]
         %td
-          %h3= banner.name
+          %h3= link_to banner.name, [:edit, banner.site, banner]
           %p= image_tag(banner.image.url)
-          %p= banner.image.url
+          %p= link_to File.basename(banner.image.url), banner.image.url
         %td
           = "#{banner.shows_count}/#{banner.show_stock}"
           = link_to [:edit, banner.site, banner], :title => 'Add Views' do

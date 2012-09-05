@@ -9,9 +9,15 @@
     = link_to "Banners", [@site, :banners]
     %span.divider /
   %li= @banner.name
+
+%h1
+  = @banner.name
+  %small
+    |
+    = link_to 'Edit', [:edit, @site]
   
-= @banner.url
+%p
+  Link:
+  = link_to @banner.url, @banner.url
 - if @banner.image
-  = image_tag @banner.image.url
-.actions
-  = link_to 'Edit', [:edit, @site, @banner]
+  %p= image_tag @banner.image.url

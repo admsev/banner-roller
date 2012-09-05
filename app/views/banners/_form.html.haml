@@ -1,4 +1,5 @@
 = form_for [parent, resource] do |f|
+  =# debug f.object.errors unless f.object.errors.empty?
   %p
     = f.label :name
     = f.text_field :name

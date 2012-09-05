@@ -12,7 +12,7 @@
           %ul.nav
             - if user_signed_in?
               %li= link_to 'Your Sites', :sites
-              %li= link_to 'Add Site', :sites
+              %li= link_to 'Add Site', [:new, :site]
           %ul.nav.pull-right
             - if user_signed_in?
               %li.dropdown
