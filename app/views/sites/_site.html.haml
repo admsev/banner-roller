@@ -1,0 +1,5 @@
+.site[site]
+  .name= link_to site.name, [site, :banners]
+  .actions
+    = link_to 'E', [:edit, site]
+    = link_to 'X', site, :method => :destroy, :confirm => "Really delete this site?"

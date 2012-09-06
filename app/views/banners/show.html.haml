@@ -1,0 +1,23 @@
+%ul.breadcrumb
+  %li
+    = link_to 'Your Sites', :sites
+    %span.divider /
+  %li
+    = link_to @site.name, @site
+    %span.divider /
+  %li
+    = link_to "Banners", [@site, :banners]
+    %span.divider /
+  %li= @banner.name
+
+%h1
+  = @banner.name
+  %small
+    |
+    = link_to 'Edit', [:edit, @site]
+  
+%p
+  Link:
+  = link_to @banner.url, @banner.url
+- if @banner.image
+  %p= image_tag @banner.image.url

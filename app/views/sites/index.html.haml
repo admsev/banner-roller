@@ -1,0 +1,24 @@
+%h1
+  Your Sites
+  %small
+    |
+    = link_to 'Add Site', [:new, :site]
+  
+- if @sites
+  %table.table.table-bordered.table-striped.sites
+    %thead
+      %tr
+        %th.span10 Name
+        %th.actions.span2 Actions
+    - @sites.each do |site|
+      %tr[site]
+        %td.name
+          = link_to "#{site.name} (#{site.url})", [site, :banners]
+        %td.actions
+          = link_to site do
+            %span.icon-eye-open
+          = link_to [:edit, site] do
+            %span.icon-edit
+          = link_to site, :method => :delete, :confirm => 'REALLY DELETE SITE?', :remote => true do
+            %span.icon-remove
+          

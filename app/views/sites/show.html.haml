@@ -1,0 +1,20 @@
+%ul.breadcrumb
+  %li
+    = link_to 'Your Sites', :sites
+    %span.divider /
+  %li= @site.name
+
+%h1
+  = @site.name
+  %small
+    |
+    = link_to 'Edit', [:edit, @site]
+%p= @site.url
+
+%code
+  :escaped
+    #{site_banner_code(@site)}
+
+%p= link_to "#{@site.banners.count} Banners total, #{@site.banners.showable.count} active", [@site, :banners]
+
+%p= link_to 'Add Banner', [:new, @site, :banner]

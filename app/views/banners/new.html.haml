@@ -1,0 +1,14 @@
+%ul.breadcrumb
+  %li
+    = link_to 'Your Sites', :sites
+    %span.divider /
+  %li
+    = link_to @site.name, @site
+    %span.divider /
+  %li
+    = link_to "Banners", [@site, :banners]
+    %span.divider /
+  %li Create
+
+%h1 Create Banner
+= render :partial => 'form', :object => @banner

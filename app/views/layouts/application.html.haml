@@ -1,0 +1,50 @@
+!!!
+%html
+  %head
+    = stylesheet_link_tag    'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/themes/redmond/jquery-ui.css'
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js'
+
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.brand(href='/') Banner Network
+          %ul.nav
+            %li= link_to 'Your Sites', :sites
+            %li= link_to 'Add Site', [:new, :site]
+          %ul.nav.pull-right
+            - if user_signed_in?
+              %li.dropdown
+                %a.dropdown-toggle{:href=>'#', :role=>'button', 'data-toggle'=>'dropdown', :id=>'drop1'}
+                  %span= current_user.email
+                  %b.caret
+                %ul.dropdown-menu{:role=>'menu', "aria-dlabelledby"=>"drop1"}
+                  %li= link_to 'Your account', :edit_user_registration
+                  %li.divider
+                  %li= link_to 'Your sites', :sites
+                  %li.divider
+                  %li= link_to 'Quit', :destroy_user_session, :method=>:delete
+            - else
+              %li= link_to 'Sign in', :new_user_session
+              %li= link_to 'Sign up', :new_user_registration
+    .container
+      - unless flash.empty?
+        .row
+          .span12
+        - flash.each do |key, value|
+          .alert{:class=>key}= value
+      .row
+        .span12= yield
+      %hr
+      %footer
+        .pull-left
+          &copy;
+          = link_to "Banner Network", :root
+        .pull-right
+          &copy;
+          = link_to 'Alexander Manzyuk', 'mailto:admsev@gmail.com'
+    :javascript
+      #{yield(:javascripts)}
