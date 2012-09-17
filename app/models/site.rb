@@ -3,7 +3,7 @@ class Site < ActiveRecord::Base
   attr_accessible :name, :url
 
   validates :name, :presence => true
-  validates :url, :format => URI::regexp(%w(http https))
+  validates :url, :presence => true, :format => URI::regexp(%w(http https))
   
   has_many :banners
   
