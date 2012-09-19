@@ -1,5 +1,8 @@
 == Welcome to Banner Network
 
+Это баннерная крутилка. Пользователь имеет несколько сайтов. Может создавать площадки для показа баннеров. Площадка может крутить несколько баннеров.
+Учитываются клики и показы. Показываются баннеры, у которых не "закончились" клики или показы.
+
 Storing All the clicks and shows in database is prodigally.
 In real there should be Redis for last day and Daily, Weekly, Monthly stats in database.
 
@@ -17,15 +20,13 @@ In real there should be Redis for last day and Daily, Weekly, Monthly stats in d
 
 2. Currently images are stored on local filesystem. Use "fog" gem for Amazon S3.
 
-3. Sorry there's not so much time for rspec. Please see examples in /spec. I know, tests first in real life.
-
-4. No time for candy bootstrap forms, sorry :)
+3. Rspec: please see examples in /spec. 
 
 == TODO
 
 1. Candy Bootstrap forms for sites, banners, devise
 
-2. Of course, more specs
+2. More specs.
 
 3. prevent_robots
 
