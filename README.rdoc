@@ -8,11 +8,11 @@ In real there should be Redis for last day and Daily, Weekly, Monthly stats in d
 
 == Quick Start
 
-1. bundle && rake db:migrate && rails s
+1. bundle && rake db:migrate && rake db:seed && rails s
 
-3. User email: "example@example.com", password: "secret"
+2. http://localhost:3000/
 
-2. We use guard for rspec.
+3. Sign in: "example@example.com", password: "secret"
 
 == Notice
 
@@ -21,6 +21,8 @@ In real there should be Redis for last day and Daily, Weekly, Monthly stats in d
 2. Currently images are stored on local filesystem. Use "fog" gem for Amazon S3.
 
 3. Rspec: please see examples in /spec. 
+
+4. Use Guard.
 
 == TODO
 
